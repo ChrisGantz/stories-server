@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "0001",
+    "email": "bobUser@email.com",
+    "username": "bobuser",
+    "password": "$2a$10$lySFdqschb2LsRu5sLtLhOqYY2AK7vgHHbJEDdxQUpgbKSp9QdXbW"
+  },
+  {
+    "_id": "0002",
+    "email": "JoeUser@email.com",
+    "username": "joeuser",
+    "password": "$2a$10$QJCIX42iD5QMxLRgHHBJre2rH6c6nI24UysmSYtkmeFv6X8uS1kgi"
+  }
+]
