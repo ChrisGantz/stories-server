@@ -11,6 +11,8 @@ const { localStrategy, jwtStrategy } = require("./passport/strategies");
 const { PORT, MONGODB_URI, CLIENT_ORIGIN } = require("./config");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
+const postsRouter = require("./routes/posts");
+// const bodyParser = require("body-parser");
 
 mongoose.Promise = global.Promise;
 
@@ -28,11 +30,15 @@ app.use(
   })
 );
 
+app.use(express.json());
+// app.use(bodyParser.json());
+
 passport.use(localStrategy);
 passport.use(jwtStrategy);
-
+// Mount Routers
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postsRouter);
 
 // // A protected endpoint which needs a valid JWT to access it
 // const jwtAuth = passport.authenticate("jwt", { session: false });
