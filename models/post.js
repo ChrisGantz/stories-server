@@ -6,7 +6,9 @@ const postSchema = new mongoose.Schema({
   post: { type: String, required: true },
   likes: { type: Number, default: 0 },
   total: { type: Number, default: 0 },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
+  commments: { type: String },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  votedUsers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
 
 // Add `createdAt` and `updatedAt` fields
