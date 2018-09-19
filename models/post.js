@@ -6,7 +6,7 @@ const postSchema = new mongoose.Schema({
   post: { type: String, required: true },
   likes: { type: Number, default: 0 },
   total: { type: Number, default: 0 },
-  commments: { type: String },
+  comments: [{ type: String }],
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   votedUsers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
@@ -22,8 +22,8 @@ postSchema.set("toObject", {
   }
 });
 // adds to schema virtually
-postSchema
-  .virtual("percUpvoted")
-  .get(() => Math.round((this.likes / this.total) * 100));
+postSchema.virtual("percUpvoted").get(() => {
+  return Math.round((this.likes / this.total) * 100);
+});
 
 module.exports = mongoose.model("Post", postSchema);

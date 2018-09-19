@@ -31,25 +31,6 @@ router.get("/all", (req, res, next) => {
     })
     .catch(err => next(err));
 });
-// DELETE IF NEEDEED
-router.get("/:id", (req, res, next) => {
-  const id = req.params.id;
-  const userId = req.user.id;
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    const err = new Error("The `id` is not valid");
-    err.status = 400;
-    return next(err);
-  }
-  Post.findById(userId)
-    .then(results => {
-      if (results) {
-        res.json(results);
-      } else {
-        next();
-      }
-    })
-    .catch(err => next(err));
-});
 
 router.post("/", (req, res, next) => {
   const { post } = req.body;
@@ -125,8 +106,28 @@ router.put("/dislikes/:id", (req, res, next) => {
     });
 });
 // COMMENTS
+router.get("/all/:id", (req, res, next) => {
+  const id = req.params.id;
+  // const userId = req.user.id;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    const err = new Error("The `id` is not valid");
+    err.status = 400;
+    return next(err);
+  }
+  Post.findById(id)
+    .then(results => {
+      if (results) {
+        res.json(results);
+      } else {
+        next();
+      }
+    })
+    .catch(err => next(err));
+});
+
 router.put("/comments/:id", (req, res, next) => {
   const id = req.params.id;
+  // const userId = req.user.id;
   const { comments } = req.body;
   if (!mongoose.Types.ObjectId.isValid(id)) {
     const err = new Error("The `id` is not valid");
@@ -135,8 +136,7 @@ router.put("/comments/:id", (req, res, next) => {
   }
 
   const updateItem = { comments };
-
-  Post.findByIdAndUpdate(id, updateItem, { new: true, upsert: true })
+  Post.findByIdAndUpdate(id, updateItem, { new: true })
     .then(results => {
       if (results) {
         res.status(201).json(results);
