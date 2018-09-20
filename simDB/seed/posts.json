@@ -1,0 +1,90 @@
+[
+  {
+    "_id": "5b9c335a9f10e1546cbee84b",
+    "likes": 1,
+    "total": 31,
+    "post": "Blah blah test post\n",
+    "userId": "5b9aaef37c212c584c9f6851",
+    "createdAt": "2018-09-14T22:16:58.542Z",
+    "updatedAt": "2018-09-15T22:49:06.272Z"
+  },
+  {
+    "_id": "5b9c33649f10e1546cbee84c",
+    "likes": 2,
+    "total": 2,
+    "post": "EXTRA TEST POST",
+    "userId": "5b9aaef37c212c584c9f6851",
+    "createdAt": "2018-09-14T22:17:08.624Z",
+    "updatedAt": "2018-09-14T22:45:16.365Z"
+  },
+  {
+    "_id": "5b9c337d9f10e1546cbee84d",
+    "likes": 13,
+    "total": 33,
+    "post": "this worked",
+    "userId": "5b9aacc37c212c584c9f684b",
+    "createdAt": "2018-09-14T22:17:33.829Z",
+    "updatedAt": "2018-09-19T16:55:30.735Z",
+    "comments": [
+      "Hello I commented on your post",
+      "I am a different comment to your post"
+    ]
+  },
+  {
+    "_id": "5b9c33859f10e1546cbee84e",
+    "likes": 4,
+    "total": 6,
+    "post": "GANTZ USER POST",
+    "userId": "5b9aacc37c212c584c9f684b",
+    "createdAt": "2018-09-14T22:17:41.435Z",
+    "updatedAt": "2018-09-20T04:54:38.385Z",
+    "comments": [
+      "Hello I  post",
+      "I am a differ post",
+      "Hello I  post",
+      "new post added again",
+      "HEY DUDE YOUR POST IS AWESOME",
+      "NEW COMMENT"
+    ]
+  },
+  {
+    "_id": "5ba032ff0362d163b8b6011a",
+    "likes": 6,
+    "total": 42,
+    "post": "dfghsrjhsrtjnsrtjsrjsjsjrjhsrsjjtyj",
+    "userId": "5b9aacc37c212c584c9f684b",
+    "createdAt": "2018-09-17T23:04:31.408Z",
+    "updatedAt": "2018-09-17T23:23:14.719Z"
+  },
+  {
+    "_id": "5ba0398270ac4900d81707b1",
+    "likes": -1,
+    "total": 5,
+    "votedUsers": [],
+    "post": "NEW LIKE limiter",
+    "userId": "5b9aacc37c212c584c9f684b",
+    "createdAt": "2018-09-17T23:32:18.394Z",
+    "updatedAt": "2018-09-18T15:45:43.940Z"
+  },
+  {
+    "_id": "5ba07275cce4cf50c46a6299",
+    "likes": 19,
+    "total": 43,
+    "votedUsers": [],
+    "post": "SICK POST MAN GANTZ",
+    "userId": "5b9aacc37c212c584c9f684b",
+    "createdAt": "2018-09-18T03:35:17.814Z",
+    "updatedAt": "2018-09-19T16:55:31.483Z"
+  },
+  {
+    "_id": "5ba1ac14b7713a370806343f",
+    "likes": 0,
+    "total": 0,
+    "commments": [],
+    "votedUsers": [],
+    "post": "TEST USER COMMENT POST TEST",
+    "userId": "5b9aaef37c212c584c9f6851",
+    "createdAt": "2018-09-19T01:53:24.217Z",
+    "updatedAt": "2018-09-19T01:54:32.452Z"
+  }
+]

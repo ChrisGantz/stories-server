@@ -10,5 +10,17 @@
     "email": "JoeUser@email.com",
     "username": "joeuser",
     "password": "$2a$10$QJCIX42iD5QMxLRgHHBJre2rH6c6nI24UysmSYtkmeFv6X8uS1kgi"
+  },
+  {
+    "_id": "5b9aacc37c212c584c9f684b",
+    "email": "myemail@gmail.com",
+    "username": "Gantz",
+    "password": "$2a$10$xyb6.O8Ejxz4ZcDdyOKSau9oODpahah4gtWo/HEIhjSNzaMaxHVH6"
+  },
+  {
+    "_id": "5b9aaef37c212c584c9f6851",
+    "email": "myveryemail@gmail.com",
+    "username": "test",
+    "password": "$2a$10$wBDjx5gPU8HgCwjxOtHSO.L6fsQDnDpgWvPrt7.QDijAiEp6EYR2q"
   }
 ]
