@@ -134,8 +134,8 @@ router.put("/comments/:id", (req, res, next) => {
     err.status = 400;
     return next(err);
   }
-
-  const updateItem = { comments };
+  console.log(req.body);
+  const updateItem = { $push: { comments: comments } };
   Post.findByIdAndUpdate(id, updateItem, { new: true })
     .then(results => {
       if (results) {
