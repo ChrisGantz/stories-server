@@ -35,7 +35,7 @@ router.get("/all", (req, res, next) => {
 router.post("/", (req, res, next) => {
   const { post } = req.body;
   const userId = req.user.id;
-  console.log(req.user);
+  // console.log(req.user);
   if (!post) {
     const err = new Error("Missing Post in request body");
     err.status = 400;
@@ -134,7 +134,7 @@ router.put("/comments/:id", (req, res, next) => {
     err.status = 400;
     return next(err);
   }
-  console.log(req.body);
+  // console.log(req.body);
   const updateItem = { $push: { comments: comments } };
   Post.findByIdAndUpdate(id, updateItem, { new: true })
     .then(results => {
