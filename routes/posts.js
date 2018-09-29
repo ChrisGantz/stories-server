@@ -64,8 +64,8 @@ router.put("/likes/:id", (req, res, next) => {
   }
 
   const updateItem = {
-    $inc: { likes: 1, total: 1 }
-    // $push: { votedUser: userId }
+    $inc: { likes: 1, total: 1 },
+    $push: { votedUser: userId }
   };
 
   Post.findByIdAndUpdate(id, updateItem, { new: true, upsert: true })
