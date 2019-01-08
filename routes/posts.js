@@ -53,6 +53,18 @@ router.post("/", (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.delete('/:id', (req, res, next) => {
+  const id = req.params.id;
+  const userId = req.user.id;
+
+  Post.findByIdAndRemove({_id: id, userId})
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 /* ========== PUT/UPDATE A SINGLE ITEM ========== */
 router.put("/likes/:id", (req, res, next) => {
   const id = req.params.id;
