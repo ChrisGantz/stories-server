@@ -53,11 +53,11 @@ router.post("/", (req, res, next) => {
     .catch(err => next(err));
 });
 
-router.delete('/:id', (req, res, next) => {
-  const id = req.params.id;
+router.delete('/', (req, res, next) => {
+  const id = req.body.id;
   const userId = req.user.id;
 
-  Post.findByIdAndRemove({_id: id, userId})
+  Post.findByIdAndDelete({_id: id, userId})
     .then(() => {
       res.sendStatus(204);
     })
