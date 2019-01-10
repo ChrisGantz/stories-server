@@ -7,11 +7,10 @@ const router = express.Router();
 
 const Post = require("../models/post");
 
-// Protects endpoints possibly dont need to protect this one
-router.use(
-  "/",
-  passport.authenticate("jwt", { session: false, failWithError: true })
-);
+// router.use(
+//   "/",
+//   passport.authenticate("jwt", { session: false, failWithError: true })
+// );
 
 router.get("/", (req, res, next) => {
   const userId = req.user.id;
@@ -52,7 +51,7 @@ router.post("/", (req, res, next) => {
     )
     .catch(err => next(err));
 });
-
+//*************** Delete Route*****************
 router.delete('/', (req, res, next) => {
   const id = req.body.id;
   const userId = req.user.id;

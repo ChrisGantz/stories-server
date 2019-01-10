@@ -30,6 +30,12 @@ app.use(
   })
 );
 
+const jwtAuth = passport.authenticate('jwt', {
+  session: false,
+  failWithError: true
+});
+
+
 app.use(express.json());
 // app.use(bodyParser.json());
 
@@ -38,7 +44,7 @@ passport.use(jwtStrategy);
 // Mount Routers
 app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
-app.use('/api/posts', postsRouter);
+app.use('/api/posts', jwtAuth, postsRouter);
 
 // // A protected endpoint which needs a valid JWT to access it
 // const jwtAuth = passport.authenticate("jwt", { session: false });
