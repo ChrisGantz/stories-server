@@ -55,7 +55,11 @@ router.post("/", (req, res, next) => {
 router.delete('/', (req, res, next) => {
   const id = req.body.id;
   const userId = req.user.id;
-
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    const err = new Error("The `id` is not valid");
+    err.status = 400;
+    return next(err);
+  }
   Post.findByIdAndDelete({_id: id, userId})
     .then(() => {
       res.sendStatus(204);
